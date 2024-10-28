@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Open Sans", serif;
+}
+
+.container{
+    width: 100%;
+    min-height: 100vh;
+    background: #bc4e9c;
+    background: -webkit-linear-gradient(to right, #f80759, #bc4e9c);
+    background: linear-gradient(to right, #f80759, #bc4e9c);
+    padding: 10px;
+}
+
+.todo-app{
+    background-color: rgb(240, 248, 255);
+    margin: 300px auto 20px;
+    width: 500px;
+    min-height: 200px;
+    padding: 10px;
+    border-radius: 0.5rem;
+}
+
+
+.todo-app h2{
+    color: #f80759;
+    text-align: center;
+
+}
+
+.row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px;
+    border-radius: 2rem;
+    background-color: rgba(0, 0, 0, 0.158);
+}
+
+
+input{
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 10px;
+    font-weight: 200;
+}
+
+button {
+    width: 9em;
+    height: 3em;
+    border-radius: 2rem;
+    font-weight: bold;
+    font-size: 15px;
+    font-family: inherit;
+    border: none;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    box-shadow: 0px 0px 12px #c5c5c5,
+    
+
+}
+
+button::before {
+
+    content: '';
+    width: 0;
+    height: 3em;
+    border-radius: 12em;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(to right, #f80759 0%, #bc4e9c 100%);
+    transition: .5s ease;
+    display: block;
+    z-index: -1;
+}
+
+button:hover::before {
+    color: #ffffff;
+    width: 9em;
+}
+
+
+ul li {
+    list-style: none;
+    padding: 12px 8px 12px 50px;
+    cursor: pointer;
+    user-select: none;
+    font-weight: bold;
+    position: relative;
+}
+
+ul li::before {
+    content: "";
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    align-items: center;
+    border-radius: 1rem;
+    background-image: url("imgs/circle.svg");
+    background-size: cover;
+    background-position: center;
+    top: 12.5px;
+    left: 15px;
+}
+
+ul li.checked{
+    color: #bc4e9c;
+    text-decoration: line-through;
+}
+
+ul li.checked::before{
+    background-image: url(imgs/check-circle-fill.svg);
+}
+
+
+ul li span{
+    position: absolute;
+    right: 0;
+    top: 5px;
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    color: #555;
+    line-height: 40px;
+    text-align: center;
+}
+
+ul li span:hover{
+    background-color: #c7c7c7;
+    border-radius: 1rem;
+}
